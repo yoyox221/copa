@@ -11,7 +11,7 @@
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Básquetbol COPA DBK CARDENALES 2025 - H. Caborca, Sonora.">
+    <meta name="description" content="Sábado COPA DBK CARDENALES 2025 - H. Caborca, Sonora.">
     <meta name="author" content="DBK NET">
     <title>SÁBADO - COPA CARDENALES DBK 2025</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
 
       header {
         margin-top: 100px;
-        height: 400px;
+        height: 450px;
       }
 
       @media (max-width: 1199px) {
@@ -54,14 +54,20 @@
         } 
       }
 
-
+      /* Quita table-responsive en escritorio */
+      @media (min-width: 768px) {
+        #datatable.table-responsive {
+          overflow-x: initial !important; /* Anula el scroll */
+          display: table !important;     /* Mantiene el formato de tabla */
+        }
+      }  
     </style>
   </head>
 
   <body id="page-top">
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top " id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">COPA DBK</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.html">DBK</a>
         <button class="navbar-toggler buttonmenu navbar-toggler-right bg-primary text-white rounded colormenu" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">         
           <i class="fa fa-bars"></i>
         </button>
@@ -72,19 +78,16 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="galeria/index.html">Galería</a>
-            </li>
+            </li>           
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="convocatoria/basquetbol.html">Básquetbol</a>
-            </li>            
-            <!-- <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="jugadores-dbk/index.html">Jugadores DBK</a>
-            </li>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="equipos/index.html">Equipos</a>
+            </li>  
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="patrocinadores/index.html">Patrocinadores</a>
-            </li>  -->
+            </li> 
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded" href="food-zone/index.html">Food Zone</a>
-            </li>            
+            </li>           
           </ul>
         </div>
       </div>
@@ -111,66 +114,1029 @@
 
     <div class="container">
       <div class="row">
-        <div class="col text-center">CRG = Categoría - Rama - Grupo</div>
+        <div class="col text-center">Usa el buscador para encontrar tus juegos.</div>
       </div>
       <div class="data-tables">
           <table id="datatable" class="table table-responsive" style="width:100%">
               <thead>
                   <tr>                      
-                      <th>HORA</th>
-                      <th class="text-right">EQUIPO</th>
-                      <th></th>
-                      <th class="text-center">MARCADOR</th>
-                      <th></th>
-                      <th>EQUIPO</th>
-                      <th>CRG</th> 
-                      <th>CANCHA</th>
+                      <th>No.</th>
+                      <th>Lugar</th>
+                      <th>Hora</th>
+                      <th>Equipo Local</th>
+                      <th>VS</th>
+                      <th>Equipo Visitante</th>
+                      <th>Categoría</th>
+                      <th>Grupo</th>
                   </tr>
               </thead>
-              <tbody> 
-
+              <tbody>
                 <tr>
-                  <td></td>
-                  <td class="text-right"><strong></strong></td>
-                  <td><img src="" alt="" width="120px"></td>
-                  <td class="text-center"><strong></strong><strong></strong></td>
-                  <td><img src="" alt="" width="120px"></td> 
-                  <td><strong></strong></td>
-                  <td></td>
-                  <td></td>
-                </tr> 
+                        <td></td>
+                        <td>GYM</td>
+                        <td>08:00 a.m</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>Suns Nogales</td>
+                        <td>Juv Var</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>09:00 a.m</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Juv Fem</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>10:00 a.m</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>Sonic Pto Peñasco</td>
+                        <td>Cad Var</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>11:00 a.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Pas Var</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>12:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Inf Var</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>1:00 p.m.</td>
+                        <td>SXB</td>
+                        <td>vs</td>
+                        <td>Wolves</td>
+                        <td>Micro Var</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>2:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>3:00 p.m</td>
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Micro Fem</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>4:00 p.m.</td>
+                        <td>SXB</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Micro Var</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>5:00 p.m.</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Cad Var</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>6:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Suns Nogales</td>
+                        <td>Juv Var</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>7:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Inf Var</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>8:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>TITANES</td>
+                        <td>Pas Var</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>GYM</td>
+                        <td>9:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
 
-                <!-- <tr>
-                  <td>08:00</td>
-                  <td class="text-right"><strong>DBK</strong></td>
-                  <td><img src="img/equipos/dbk1.png" alt="" width="120px"></td>
-                  <td class="text-center"><strong>4</strong> FINAL <strong>10</strong></td>
-                  <td><img src="img/equipos/seeds2.png" alt="" width="120px"></td> 
-                  <td><strong>SEEDS</strong></td>
-                  <td>PROMO - MIXTO A</td>
-                  <td>KINO 2</td>
-                </tr> --> 
-                
-                
+
+
+
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>08:00 a.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Panteras</td>
+                        <td>Juv Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>09:00 a.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Halcones</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>10:00 a.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>11:00 a.m</td>
+                        <td>Coyotes</td>
+                        <td>vs</td>
+                        <td>Selec U16</td>
+                        <td>Juv Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>12:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Pas Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>2:00 p.m</td>
+                        <td>Halcones</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Pas Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>3:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Inf Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>4:00 p.m.</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>Wolves</td>
+                        <td>Micro Var</td>
+                        <td>C</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>5:00 p.m.</td>
+                        <td>Sonic Pto Peñasco</td>
+                        <td>vs</td>
+                        <td>Cardenales</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>6:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Micro Fem</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>7:00 p.m</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>Panteras</td>
+                        <td>Juv Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>8:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Sonic Pto P</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DUELA</td>
+                        <td>9:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Pas Var</td>
+                        <td>B</td>                        
+                    </tr>
+
+
+
+
+
+
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>08:00 a.m</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>09:00 a.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>10:00 a.m</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>TITANES</td>
+                        <td>Inf Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>11:00 a.m</td>
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>Cardenales</td>
+                        <td>Micro Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>12:00 p.m</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Micro Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>1:00 p.m.</td>
+                        <td>Jaguares</td>
+                        <td>vs</td>
+                        <td>TITANES</td>
+                        <td>Pas Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>2:00 p.m</td>
+                        <td>Berrendos</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Micro Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>3:00 p.m</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>4:00 p.m.</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Micro Fem</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>5:00 p.m.</td>
+                        <td>Halcones</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>6:00 p.m</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Micro Fem</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>7:00 p.m</td>
+                        <td>Berrendos</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Inf Var</td>
+                        <td>C</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>8:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-2</td>
+                        <td>9:00 p.m</td>
+                        <td>Cobach</td>
+                        <td>vs</td>
+                        <td>Halcones</td>
+                        <td>Cad Var</td>
+                        <td>U</td>                        
+                    </tr>
+
+
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>08:00 a.m</td>                        
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>09:00 a.m</td>                        
+                        <td>SXB</td>
+                        <td>vs</td>
+                        <td>Capitanes</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>10:00 a.m</td>                        
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Inf Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>11:00 a.m</td>                        
+                        <td>Wolves</td>
+                        <td>vs</td>
+                        <td>Capitanes</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>12:00 p.m</td>                        
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Bib Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>1:00 p.m.</td>                        
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>2:00 p.m</td>                        
+                        <td>Muñoz</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>3:00 p.m</td>                        
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Wolves</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>4:00 p.m.</td>                        
+                        <td>SXB</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>5:00 p.m.</td>                        
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>TITANES</td>
+                        <td>Inf Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>6:00 p.m</td>                        
+                        <td>Solecitos A</td>
+                        <td>vs</td>
+                        <td>Cardenales</td>
+                        <td>Preesc</td>
+                        <td>JE</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>7:00 p.m</td>                        
+                        <td>Solecitos B</td>
+                        <td>vs</td>
+                        <td>Wolves</td>
+                        <td>Preesc</td>
+                        <td>JE</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>8:00 p.m</td>                        
+                        <td>Halcones</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Pas Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>CANCHA-1</td>
+                        <td>9:00 p.m</td>                        
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>                        
+                    </tr>
+
+
+
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>09:00 a.m</td>
+                        <td>TITANES</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>10:00 a.m</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>Berrendos</td>
+                        <td>Inf Var</td>
+                        <td>C</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>11:00 a.m</td>
+                        <td>Venados B</td>
+                        <td>vs</td>
+                        <td>Panteras</td>
+                        <td>Inf Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>12:00 p.m</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>DAP</td>
+                        <td>Micro Var</td>
+                        <td>C</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>1:00 p.m.</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Preesc</td>
+                        <td>JE</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>2:00 p.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Micro Fem</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>3:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>4:00 p.m.</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>Cardenales</td>
+                        <td>Micro Var</td>
+                        <td>C</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>5:00 p.m.</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Inf Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>6:00 p.m</td>
+                        <td>TITANES</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>7:00 p.m</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Inf Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-1</td>
+                        <td>8:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Panteras</td>
+                        <td>Inf Var</td>
+                        <td>A</td>                        
+                    </tr>
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>DBK- 2</td>
+                        <td>08:00 a.m</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Preesc</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK- 2</td>
+                        <td>09:00 a.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Preesc</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK- 2</td>
+                        <td>10:00 a.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK- 2</td>
+                        <td>11:00 a.m</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>12:00 p.m</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Bib Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>1:00 p.m.</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>2:00 p.m</td>
+                        <td>Jaguares</td>
+                        <td>vs</td>
+                        <td>Capitanes</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>3:00 p.m</td>
+                        <td>Berrendos</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>4:00 p.m.</td>
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Micro Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>5:00 p.m.</td>
+                        <td>IAC</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Bib Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>6:00 p.m</td>
+                        <td>Berrendos</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>7:00 p.m</td>
+                        <td>TITANES</td>
+                        <td>vs</td>
+                        <td>Cardenales</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>DBK-2</td>
+                        <td>8:00 p.m</td>
+                        <td>Wolves</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+
+
+
+
+
+
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>08:00 a.m</td>
+                        <td>Solecitos A</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Preesc</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>09:00 a.m</td>
+                        <td>Jaguares</td>
+                        <td>vs</td>
+                        <td>Venados</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>10:00 a.m</td>
+                        <td>Solecitos B</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Preesc</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>11:00 a.m</td>
+                        <td>Berrendos</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>4:00 p.m.</td>
+                        <td>Cardenales</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Bib Var</td>
+                        <td>B</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>5:00 p.m.</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>SXB</td>
+                        <td>Bib Fem</td>
+                        <td>U</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>7:00 p.m</td>
+                        <td>Jaguares</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>EXT-2</td>
+                        <td>8:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Capitanes</td>
+                        <td>Bib Var</td>
+                        <td>A</td>                        
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>08:00 a.m</td>
+                        <td>Americano</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Micro Var</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>09:00 a.m</td>
+                        <td>Turiones</td>
+                        <td>vs</td>
+                        <td>DBK</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>11:00 a.m</td>
+                        <td>Capitanes</td>
+                        <td>vs</td>
+                        <td>Turiones</td>
+                        <td>Micro Fem</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>12:00 p.m</td>
+                        <td>DBK</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Micro Fem</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>5:00 p.m.</td>
+                        <td>Venados</td>
+                        <td>vs</td>
+                        <td>IAC</td>
+                        <td>Micro Fem</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>7:00 p.m</td>
+                        <td>Americano</td>
+                        <td>vs</td>
+                        <td>Jaguares</td>
+                        <td>Micro Var</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>8:00 p.m</td>
+                        <td>DAP</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Pas Fem</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MOR PALLETS</td>
+                        <td>9:00 p.m</td>
+                        <td>Jaguares</td>
+                        <td>vs</td>
+                        <td>Muñoz</td>
+                        <td>Pas Var</td>
+                        <td>A</td>
+                    </tr>
+                    
+
               </tbody>
-              <tfoot>
-                  <tr>
-                      <th>HORA</th>
-                      <th class="text-right">EQUIPO</th>
-                      <th></th>
-                      <th class="text-center">MARCADOR</th>
-                      <th></th>
-                      <th>EQUIPO</th>
-                      <th>CRG</th>
-                      <th>CANCHA</th>
-                  </tr>
-              </tfoot>
           </table>
       </div>
       <!-- End Datatable -->
     </div>
 
-
+ 
     <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">
@@ -219,7 +1185,7 @@
       </div>
     </footer>
 
-    <div class="copyright py-4 text-center text-white">
+    <div class="footer py-4 text-center text-white">
       <div class="container">
         <big>COPA CARDENALES DBK 2025 - H. Caborca, Sonora.</big>
       </div>
@@ -239,34 +1205,56 @@
     <script src="js/app.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#datatable").dataTable().fnDestroy();
-            var t =$('#datatable').DataTable({
-                responsive: true,
-                order: [[ 0, 'asc' ]],
-                paging: true,
-                searching: true,
-                pageLength: 100,
-                columnDefs: [ { searchable: false, orderable: false, targets: 0, },],
-                language: {
-                    search: 'Buscar',
-                    paginate: {
-                        "first": "Primero",
-                        "last": "Último",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#datatable").dataTable().fnDestroy();
+        var t = $('#datatable').DataTable({
+            responsive: true,
+            order: [[2, 'asc']], // Ordenar por la columna de Hora (índice 2)
+            paging: true,
+            searching: true,
+            pageLength: 100,
+            columnDefs: [
+                { 
+                    searchable: false, 
+                    orderable: false, 
+                    targets: 0 // No permitir ordenar/buscar en la columna de números
+                },
+                { 
+                    type: 'time', 
+                    targets: 2 // Especificar que la columna de hora es de tipo tiempo
+                }
+            ],
+            language: {
+                search: 'Buscar',
+                paginate: {
+                    "first": "Primero",
+                    "last": "Último",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                },
                 emptyTable: "No hay datos disponibles en la tabla",
                 zeroRecords: "No se encontraron coincidencias",
                 info: "_TOTAL_ juegos de la COPA CARDENALES DBK 2025",
                 infoEmpty: "Mostrando 0 a 0 de 0 entradas",
                 infoFiltered: "(Filtrado de _MAX_ total de entradas)",
                 lengthMenu: "Mostrar _MENU_ entradas"
+            },
+            createdRow: function(row, data, dataIndex) {
+                // Asignar número consecutivo a la primera celda si está vacía
+                if (!data[0]) {
+                    $('td:eq(0)', row).html(dataIndex + 1);
                 }
-            });                       
+            },
+            drawCallback: function() {
+                // Renumerar las filas después de ordenar/filtrar/paginar
+                this.api().column(0, {search:'applied', order:'applied'}).nodes().each(function(cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }
         });
-    </script>  
+    });
+</script>
   </body>
 
 </html>
