@@ -1,30 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNWK931CCL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-HNWK931CCL');
-    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <title>Copa DBK 2026 | Equipos</title>
-    <meta name="description" content="Participa en la Copa DBK 2026 del 24 al 26 de abril. El torneo de básquetbol más importante de H. Caborca, Sonora. ¡Inscribe a tu equipo hoy!">
-    <meta name="keywords" content="Copa DBK 2026, básquetbol Caborca, torneo basquetbol Sonora, Colegio Don Bosco Kino, Cardenales DBK">
-    <link rel="canonical" href="https://www.dbk.mx/copa">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.dbk.mx/copa">
-    <meta property="og:title" content="Copa DBK 2026 | El Torneo de Caborca">
-    <meta property="og:description" content="Vive la pasión del básquetbol en la séptima edición de la Copa DBK.">
-    <meta property="og:image" content="https://www.dbk.mx/copa/img/logo.png">
     
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -53,12 +34,89 @@
     <style>
         .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
         .hero-mini { background: linear-gradient(rgba(15, 42, 66, 0.8), rgba(15, 42, 66, 0.8)), url('../img/fondo3.png'); background-size: cover; background-position: center; }
+        
+        .team-item {
+            padding: 8px 12px;
+            background: #f9fafb;
+            border-left: 4px solid #e5e7eb;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .group-header {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #f03232;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 12px 0 6px 0;
+            display: flex;
+            align-items: center;
+        }
+        .group-header::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #fee2e2;
+            margin-left: 10px;
+        }
+
+        /* --- ESTILOS CRÍTICOS PARA PDF --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+            
+            /* Forzar colores de fondo en PDF */
+            body { 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important;
+                background-color: #f9fafb !important;
+            }
+
+            /* Ocultar elementos innecesarios */
+            .no-print { display: none !important; }
+
+            /* Mantener el diseño de columnas en el PDF */
+            .grid-pdf { 
+                display: grid !important; 
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+                gap: 15px !important; 
+            }
+
+            /* Evitar que las tarjetas se corten entre páginas */
+            .category-card {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 20px !important;
+                display: block !important;
+                position: relative !important;
+            }
+
+            .hero-mini {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+                background-color: #0f2a42 !important;
+            }
+            
+            header h1 { font-size: 2.5rem !important; }
+        }
     </style>
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-900">
 
-    <nav class="fixed w-full z-50 glass-nav text-white shadow-lg">
+    <div class="no-print fixed bottom-8 right-8 z-[60]">
+        <button onclick="window.print()" class="bg-dbkDark text-white px-6 py-4 rounded-full shadow-2xl hover:bg-dbkRed transition-all flex items-center font-bold uppercase tracking-widest text-sm border-2 border-white/20">
+            <i class="fa fa-file-pdf-o mr-3 text-xl"></i> Exportar a PDF
+        </button>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-nav text-white shadow-lg no-print">
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <a href="../index.html" class="font-heading font-extrabold text-2xl tracking-tighter">DBK<span class="text-dbkGold">2026</span></a>
             <a href="../index.html" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all text-sm font-bold uppercase tracking-widest">
@@ -70,137 +128,204 @@
     <header class="bg-dbkDark hero-mini pt-32 pb-20 px-6">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tighter uppercase">
-                Categorías
+                Categorías y Equipos
             </h1>
-            <p class="text-dbkGold font-bold mt-4 tracking-widest uppercase text-sm">Copa DBK 2026 - El Torneo de Caborca</p>
+            <p class="text-dbkGold font-bold mt-4 tracking-widest uppercase text-sm">Copa DBK CARDENALES 2026</p>
             <div class="w-20 h-1.5 bg-dbkRed mx-auto mt-6 rounded-full"></div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-16">
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 grid-pdf">
             
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkGold/20 p-4 rounded-xl text-dbkDark"><i class="fa fa-child text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Preescolar</h3><span class="text-xs text-gray-400 font-bold uppercase tracking-tighter">Mixto</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-dbkGold/20 p-4 rounded-xl text-dbkDark"><i class="fa fa-child text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Preescolar</h3><span class="text-xs text-gray-400 font-bold uppercase tracking-tighter">Mixto</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">IAC</div>
+                    <div class="team-item">SOLECITOS</div>
+                    <div class="team-item">BERRENDOS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-star text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Biberón Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-2">
+                    <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-star text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Biberón </h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+                </div>
+                <div>
+                    <div class="group-header">Grupo A</div>
+                    <div class="team-item">DBK</div>                    
+                    <div class="team-item">JAGUARES</div>
+                    <div class="team-item">IAC</div>
+                    <div class="team-item">RAZITOS</div>
+                    <div class="team-item">LABRADORES</div>
+                    <div class="group-header">Grupo B</div>
+                    <div class="team-item">CARDENALES</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">WOLVES</div>
+                    <div class="team-item">TITANES</div>
+                    <div class="team-item">BERRENDOS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-star text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Biberón Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-star text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Biberón </h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">THUNDER</div>
+                    <div class="team-item">RAZITOS</div>
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">BERRENDOS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-bolt text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Micro Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-2">
+                    <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-bolt text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Micro Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+                </div>
+                <div>
+                    <div class="group-header">Grupo A</div>
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">RAZITOS</div>
+                    <div class="team-item">BERRENDOS</div>
+                    <div class="team-item">VENADOS</div>
+                    <div class="group-header">Grupo B</div>
+                    <div class="team-item">CARDENALES</div>
+                    <div class="team-item">IAC</div>
+                    <div class="team-item">MAMBAS</div>
+                    <div class="team-item">CAPITANES</div>
+                    <div class="team-item">BERRENDOS B</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-bolt text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Micro Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-2">
+                    <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-bolt text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Micro Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+                </div>
+                <div>
+                    <div class="group-header">Grupo A</div>
+                    <div class="team-item">DBK 1</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">LABRADORES</div>
+                    <div class="team-item">VENADOS</div>
+                    <div class="group-header">Grupo B</div>
+                    <div class="team-item">DBK 2</div>
+                    <div class="team-item">CARDENALES</div>
+                    <div class="team-item">IAC</div>
+                    <div class="team-item">RAZITOS</div>
+                    <div class="team-item">LEONAS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-trophy text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Infantil Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-2">
+                    <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-trophy text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Infantil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+                </div>
+                <div>
+                    <div class="group-header">Grupo A</div>
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">IAC</div>
+                    <div class="team-item">LINCES</div>
+                    <div class="team-item">TITANES</div>
+                    <div class="group-header">Grupo B</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">Muñoz</div>
+                    <div class="team-item">LABRADORES</div>
+                    <div class="team-item">LEONES</div>
+                    <div class="team-item">CAPITANES</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-trophy text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Infantil Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-trophy text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Infantil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">RAZITOS</div>
+                    <div class="team-item">LINCES</div>
+                    <div class="team-item">VENADOS</div>
+                    <div class="team-item">NEWLAND</div>
+                    <div class="team-item">BERRENDOS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-shield text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Pasarela Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-shield text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Pasarela</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">DBK A</div>
+                    <div class="team-item">DBK B</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">Muñoz</div>
+                    <div class="team-item">TITANES</div>
+                    <div class="team-item">TIBURONES</div>
+                    <div class="team-item">GANTE</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-shield text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Pasarela Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-shield text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Pasarela</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">CARDENALES</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">MAMBAS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-fire text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Cadete Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+            <div class="category-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-fire text-2xl"></i></div>
+                    <div><h3 class="font-black text-lg uppercase leading-none">Cadete</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="team-item">DBK</div>
+                    <div class="team-item">SXB</div>
+                    <div class="team-item">LABRADORES</div>
+                    <div class="team-item">TIBURONES</div>
+                    <div class="team-item">COBACH</div>
+                    <div class="team-item">GANTE</div>
+                    <div class="team-item">FUMINS</div>
+                </div>
             </div>
 
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-dbkRed/10 p-4 rounded-xl text-dbkRed"><i class="fa fa-users text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Juvenil Varonil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Varonil</span></div>
-            </div>
-
-            <div class="bg-white border-2 border-transparent p-6 rounded-2xl shadow-md category-card transition-all flex items-center space-x-4">
-                <div class="bg-pink-100 p-4 rounded-xl text-pink-600"><i class="fa fa-users text-2xl"></i></div>
-                <div><h3 class="font-black text-lg uppercase leading-none">Juvenil Femenil</h3><span class="text-xs text-dbkDark font-bold uppercase">Rama Femenil</span></div>
-            </div>
+            
+            
 
         </div>
 
-        <div class="mt-20 bg-dbkRed rounded-[2rem] p-10 text-white text-center">
+        <div class="mt-20 bg-dbkRed rounded-[2rem] p-10 text-white text-center shadow-xl no-print">
             <h2 class="font-heading text-3xl font-extrabold mb-4 uppercase">¿Tu equipo ya está listo?</h2>
             <p class="text-white/80 mb-8 max-w-2xl mx-auto">Sigue de cerca el rol de juegos en la página principal para conocer tus horarios de competencia.</p>
             <a href="../index.html#rol" class="inline-block bg-dbkDark text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-white hover:text-dbkRed transition-all">Ver Rol de Juegos</a>
         </div>
     </main>
 
-    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10 reveal">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            
-            <div class="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
-                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-dbkRed inline-block text-white">Ubicación e Información</h4>
-                
-                <p class="text-white/70 text-base md:text-lg leading-relaxed">
-                    Ave. Quiroz y Mora No. 163 final sur, Col. Los Jardines<br>
-                    <span class="font-bold text-white">H. Caborca, Sonora.</span><br>
-                    <span class="mt-4 block">Email: <a href="mailto:contacto@dbk.mx" class="text-dbkGold font-bold hover:text-white transition-colors">contacto@dbk.mx</a></span>
-                </p>
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-2">
-                    <a href="../canchas/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-map mr-2"></i> Canchas
-                    </a>
-                    <span class="text-white/20 hidden sm:inline">|</span>
-                    <a href="../hospedaje/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-bed mr-2"></i> Hospedaje
-                    </a>
-                    <span class="text-white/20 hidden sm:inline">|</span>
-                    <a href="../food-zone/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-cutlery mr-2"></i> Alimentos
-                    </a>
-                </div>
-
-                <a href="https://goo.gl/maps/ECgheE1u22S2" target="_blank" class="inline-flex items-center bg-dbkRed text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-black hover:bg-white hover:text-dbkDark transition-all shadow-2xl hover:-translate-y-1 tracking-widest uppercase text-xs md:text-sm">
-                    <i class="fa fa-map-marker mr-3"></i> Ver mapa Google
-                </a>
-            </div>
-
-            <div class="flex flex-col items-center md:items-end justify-center space-y-6 md:space-y-8">
-                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter text-dbkGold">Redes Sociales</h4>
-                <div class="flex gap-4 md:gap-6">
-                    <a href="https://www.facebook.com/domboscokino/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/dbk.mx/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=526371059826" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
+    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10 no-print">
+        <div class="max-w-7xl mx-auto text-center">
+            <h4 class="font-heading font-black text-2xl tracking-tighter text-dbkGold uppercase mb-4">Copa DBK 2026</h4>
+            <p class="text-white/30 uppercase text-xs font-bold tracking-widest">H. Caborca, Sonora, México</p>
         </div>
     </footer>
-
-    <div class="bg-dbkDark py-6 text-center text-white/40 border-t border-white/5">
-        <small class="font-bold">Copa DBK Cardenales 2026 <br>H. Caborca, Sonora, Mx.</small>
-    </div>
 
 </body>
 </html>
