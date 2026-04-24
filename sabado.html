@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNWK931CCL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HNWK931CCL');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Copa DBK 2026 | Sábado</title>
+    <meta name="description" content="Participa en la Copa DBK 2026 del 24 al 26 de abril. El torneo de básquetbol más importante de H. Caborca, Sonora. ¡Inscribe a tu equipo hoy!">
+    <meta name="keywords" content="Copa DBK 2026, básquetbol Caborca, torneo basquetbol Sonora, Colegio Don Bosco Kino, Cardenales DBK">
+    <link rel="canonical" href="https://www.dbk.mx/copa">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dbk.mx/copa">
+    <meta property="og:title" content="Copa DBK 2026 | El Torneo de Caborca">
+    <meta property="og:description" content="Vive la pasión del básquetbol en la séptima edición de la Copa DBK.">
+    <meta property="og:image" content="https://www.dbk.mx/copa/img/logo.png">
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"> 
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dbkRed: '#f03232',
+                        dbkDark: '#0f2a42',
+                        dbkSecondary: '#b5352d',
+                        dbkGold: '#f8d67d',
+                        dbkLight: '#fff',
+                        dbkBlue: '#0a4f9f',
+                        dbkYellow: '#eb980e'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
+        /* Estilo para la tabla */
+        #datatable_wrapper .dataTables_filter input {
+            border: 2px solid #0f2a42;
+            border-radius: 10px;
+            padding: 5px 15px;
+            outline: none;
+        }
+        .page-item.active .page-link {
+            background-color: #f03232 !important;
+            border-color: #f03232 !important;
+        }
+        .table thead th {
+            background-color: #0f2a42;
+            color: white;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            border: none;
+        }
+
+        .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
+        .hero-mini { background: linear-gradient(rgba(15, 42, 66, 0.8), rgba(15, 42, 66, 0.8)), url('img/fondo3.png'); background-size: cover; background-position: center; }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <nav class="fixed w-full z-50 glass-nav text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-heading font-extrabold text-2xl tracking-tighter">DBK<span class="text-dbkGold">2026</span></a>
+            <div class="hidden md:flex space-x-6 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-dbkGold transition-colors">Inicio</a>
+                <a href="galeria/index.html" class="hover:text-dbkGold transition-colors">Galería</a>
+                <a href="equipos/index.html" class="hover:text-dbkGold transition-colors">Equipos</a>
+            </div>
+            <a href="index.html" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all text-xs font-bold uppercase">
+                <i class="fa fa-arrow-left mr-1"></i> Volver
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 hero-mini bg-dbkDark text-center px-6">
+        <h1 class="font-heading text-4xl md:text-5xl text-white font-extrabold tracking-tighter uppercase mb-2">
+            Rol Oficial <span class="text-dbkRed">Sábado</span>
+        </h1>
+        <p class="text-dbkGold font-bold tracking-[0.2em] text-sm uppercase">25 de Abril de 2026</p>
+        <div class="w-16 h-1 bg-dbkRed mx-auto mt-6 rounded-full"></div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <div class="bg-white rounded-[2rem] shadow-2xl p-6 md:p-10 border border-gray-100">
+            <div class="mb-8 text-center md:text-left">
+                <h2 class="font-heading font-black text-2xl text-dbkDark uppercase tracking-tighter">Básquetbol</h2>
+                <p class="text-gray-400 text-sm italic">Usa el buscador para filtrar por equipo, lugar o categoría.</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table id="datatable" class="table table-hover w-full border-collapse" style="width:100%">
+                    <thead>
+                        <tr>                                 
+                            <th class="p-4 rounded-tl-xl">No.</th>
+                            <th class="p-4">Lugar</th>
+                            <th class="p-4">Hora</th>
+                            <th class="p-4 text-dbkGold">Local</th>
+                            <th class="p-4 text-center">VS</th>
+                            <th class="p-4 text-dbkGold">Visitante</th>
+                            <th class="p-4">Categoría</th>
+                            <th class="p-4 rounded-tr-xl">Grupo</th>
+                        </tr>
+                    </thead>
+                   <!--  <tbody class="text-sm font-medium text-gray-700">
+                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                            <td class="p-4">1</td>
+                            <td class="p-4 font-bold">GYM DBK</td>
+                            <td class="p-4 text-dbkRed">10:00 a.m</td>
+                            <td class="p-4 font-black uppercase">Cardenales</td>
+                            <td class="p-4 text-center opacity-30 italic font-light">vs</td>
+                            <td class="p-4 font-black uppercase">Cobach</td>
+                            <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">Cad Var</span></td>
+                            <td class="p-4">U</td>
+                        </tr>
+                    </tbody> -->
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="index.html" class="inline-flex items-center text-dbkDark font-bold hover:text-dbkRed transition-colors">
+                <i class="fa fa-chevron-left mr-2"></i> Regresar a la cartelera general
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10 reveal">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            
+            <div class="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-dbkRed inline-block text-white">Ubicación e Información</h4>
+                
+                <p class="text-white/70 text-base md:text-lg leading-relaxed">
+                    Ave. Quiroz y Mora No. 163 final sur, Col. Los Jardines<br>
+                    <span class="font-bold text-white">H. Caborca, Sonora.</span><br>
+                    <span class="mt-4 block">Email: <a href="mailto:contacto@dbk.mx" class="text-dbkGold font-bold hover:text-white transition-colors">contacto@dbk.mx</a></span>
+                </p>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-2">
+                    <a href="canchas/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
+                        <i class="fa fa-map mr-2"></i> Canchas
+                    </a>
+                    <span class="text-white/20 hidden sm:inline">|</span>
+                    <a href="hospedaje/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
+                        <i class="fa fa-bed mr-2"></i> Hospedaje
+                    </a>
+                    <span class="text-white/20 hidden sm:inline">|</span>
+                    <a href="food-zone/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
+                        <i class="fa fa-cutlery mr-2"></i> Alimentos
+                    </a>
+                </div>
+
+                <a href="https://goo.gl/maps/ECgheE1u22S2" target="_blank" class="inline-flex items-center bg-dbkRed text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-black hover:bg-white hover:text-dbkDark transition-all shadow-2xl hover:-translate-y-1 tracking-widest uppercase text-xs md:text-sm">
+                    <i class="fa fa-map-marker mr-3"></i> Ver mapa Google
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end justify-center space-y-6 md:space-y-8">
+                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter text-dbkGold">Redes Sociales</h4>
+                <div class="flex gap-4 md:gap-6">
+                    <a href="https://www.facebook.com/domboscokino/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dbk.mx/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=526371059826" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg-dbkDark py-6 text-center text-white/40 border-t border-white/5">
+        <small class="font-bold">Copa DBK Cardenales 2026 <br>H. Caborca, Sonora, Mx.</small>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var t = $('#datatable').DataTable({
+                responsive: true,
+                order: [[2, 'asc']], 
+                paging: true,
+                searching: true,
+                pageLength: 50,
+                language: {
+                    search: "🔍 ",
+                    searchPlaceholder: "Buscar equipo o categoría...",
+                    paginate: { "next": "→", "previous": "←" },
+                    info: "Mostrando _TOTAL_ juegos",
+                    emptyTable: "No hay juegos programados para este día",
+                    zeroRecords: "No se encontraron coincidencias"
+                },
+                drawCallback: function() {
+                    this.api().column(0, {search:'applied', order:'applied'}).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

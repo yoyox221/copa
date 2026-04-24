@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Boski Pro Arcade - Copa DBK 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+    <style>
+        body { margin: 0; background: #050505; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        canvas { border-radius: 10px; box-shadow: 0 0 40px rgba(0,0,0,0.8); }
+    </style>
+</head>
+<body>
+<script>
+const config = {
+    type: Phaser.AUTO,
+    width: 450,
+    height: 750,
+    backgroundColor: '#0a0a1a',
+    physics: {
+        default: 'arcade',
+        arcade: { gravity: { y: 1600 }, debug: false }
+    },
+    scene: { preload: preload, create: create, update: update }
+};
+
+let balls, score = 0, gameActive = true, combo = 0;
+let rimFront, rimBack, particles;
+const game = new Phaser.Game(config);
+
+function preload() {
+    this.load.crossOrigin = 'anonymous';
+    this.load.image('boski', 'boski.png');
+    this.load.image('ball', 'pelota.png');
+    this.load.image('flare', 'https://labs.phaser.io/assets/particles/white-flare.png');
+}
+
+function create() {
+    // Escenario Profesional
+    let bg = this.add.graphics();
+    bg.fillGradientStyle(0x1a1a2e, 0x1a1a2e, 0x020205, 0x020205, 1);
+    bg.fillRect(0, 0, 450, 750);
+
+    // Tablero (Backboard)
+    this.add.rectangle(225, 180, 320, 220, 0xffffff, 0.1).setStrokeStyle(4, 0x333333);
+    this.add.rectangle(225, 180, 100, 80).setStrokeStyle(2, 0x555555);
+
+    // Aro Pro (Capa de atrás)
+    rimBack = this.add.rectangle(225, 250, 90, 8, 0xbf360c);
+    this.physics.add.existing(rimBack, true);
+
+    // Partículas de Fuego (Mejoradas)
+    particles = this.add.particles(0, 0, 'flare', {
+        speed: 80, scale: { start: 0.5, end: 0 },
+        alpha: { start: 1, end: 0 }, tint: 0xff4500,
+        blendMode: 'ADD', emitting: false
+    });
+
+    // Mascota
+    this.add.image(80, 680, 'boski').setScale(0.35).setAlpha(0.9);
+
+    // Score con fuente de sistema limpia
+    scoreText = this.add.text(225, 60, '0', { 
+        font: 'bold 80px Arial', fill: '#ffffff', align: 'center' 
+    }).setOrigin(0.5).setAlpha(0.2);
+
+    balls = this.physics.add.group();
+
+    // Lógica de Tiro Mejorada
+    this.input.on('pointerup', (p) => {
+        if (!gameActive) return;
+
+        let diffY = p.upY - p.downY;
+        let diffX = p.upX - p.downX;
+        
+        if (diffY < -30) {
+            launchBall(this, diffX, diffY);
+        }
+    });
+
+    // Aro Pro (Capa de adelante para efecto de profundidad)
+    rimFront = this.add.rectangle(225, 255, 90, 8, 0xe64a19);
+    this.add.graphics().lineStyle(4, 0xffffff, 0.5).strokeRect(180, 255, 90, 1);
+}
+
+function launchBall(scene, dx, dy) {
+    let b = balls.create(225, 700, 'ball');
+    b.setScale(0.2).setCircle(180).setBounce(0.6).setDrag(0.98);
+    
+    // El "secreto" de la fluidez: Velocidad vectorial real
+    let vx = dx * 2.5;
+    let vy = Phaser.Math.Clamp(dy * 3.5, -1500, -800);
+    
+    b.setVelocity(vx, vy);
+
+    // Animación de profundidad (se encoge al alejarse)
+    scene.tweens.add({
+        targets: b,
+        scale: 0.09,
+        duration: 800,
+        ease: 'Cubic.easeOut'
+    });
+
+    // Sensor de Canasta dinámico
+    scene.time.addEvent({
+        delay: 200,
+        callback: () => {
+            scene.physics.add.overlap(b, rimBack, () => {
+                if (b.body.velocity.y > 0 && b.y < 260) {
+                    countScore(scene);
+                    b.setTint(0xffaa00);
+                    particles.emitParticleAt(b.x, b.y, 15);
+                }
+            });
+        }
+    });
+}
+
+function countScore(scene) {
+    score += 1;
+    scoreText.setText(score);
+    scene.cameras.main.flash(200, 255, 255, 255, false);
+}
+
+function update() {
+    balls.children.iterate(b => {
+        if (b) {
+            // Rotación realista según velocidad
+            b.angle += b.body.velocity.x * 0.05;
+            
+            // Destruir pelotas fuera
+            if (b.y > 800) b.destroy();
+        }
+    });
+}
+</script>
+</body>
+</html>
