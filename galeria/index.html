@@ -41,8 +41,37 @@
     <style>
         .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
         .hero-mini { background: linear-gradient(rgba(15, 42, 66, 0.8), rgba(15, 42, 66, 0.8)), url('../img/fondo3.png'); background-size: cover; background-position: center; }
+        
         /* Evita que las imágenes se corten entre columnas */
         .gallery-item { break-inside: avoid; margin-bottom: 1rem; }
+
+        /* --- CSS para el Cargador (Spinner) --- */
+        .lds-ring {
+          display: inline-block;
+          position: relative;
+          width: 40px;
+          height: 40px;
+        }
+        .lds-ring div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 32px;
+          height: 32px;
+          margin: 4px;
+          border: 4px solid #f03232; /* Color Rojo DBK */
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #f03232 transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) { animation-delay: -0.45s; }
+        .lds-ring div:nth-child(2) { animation-delay: -0.3s; }
+        .lds-ring div:nth-child(3) { animation-delay: -0.15s; }
+        @keyframes lds-ring {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        /* -------------------------------------- */
     </style>
 </head>
 
@@ -111,18 +140,31 @@
             anchor.setAttribute('data-pswp-width', '1000'); 
             anchor.setAttribute('data-pswp-height', '1500'); 
             anchor.target = '_blank';
-            anchor.className = "gallery-item group relative block overflow-hidden rounded-xl bg-gray-200 shadow-md hover:shadow-xl transition-all duration-300";
+            // Añadimos 'flex items-center justify-center' para centrar el spinner
+            anchor.className = "gallery-item group relative block overflow-hidden rounded-xl bg-gray-200 shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[150px]";
 
             anchor.innerHTML = `
+                <div class="lds-ring absolute z-0"><div></div><div></div><div></div><div></div></div>
+                
                 <img src="${photoPath}" 
                      alt="Copa DBK 2026 - Foto ${i}" 
                      loading="lazy"
-                     class="w-full h-auto block transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                     onload="imageLoaded(this)"
+                     class="w-full h-auto block transition-transform duration-500 group-hover:scale-105 relative z-10 opacity-0 transition-opacity duration-300">
+                
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
                     <i class="fa fa-search-plus text-white text-3xl"></i>
                 </div>
             `;
             gallery.appendChild(anchor);
+        }
+
+        // Función que se ejecuta cuando la imagen se carga
+        window.imageLoaded = function(img) {
+            // Ponemos la opacidad de la imagen a 100 (aparece suavemente)
+            img.style.opacity = '1';
+            // Quitamos el fondo gris del contenedor padre (el enlace <a>)
+            img.parentElement.classList.remove('bg-gray-200');
         }
 
         // Inicializar Lightbox
