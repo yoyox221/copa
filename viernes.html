@@ -113,7 +113,84 @@
                 <p class="text-gray-400 text-sm italic">Usa el buscador para filtrar por equipo, lugar o categoría.</p>
             </div>
 
+            <div class="max-w-7xl mx-auto bg-white p-4 shadow-xl rounded-lg overflow-x-auto">
+                <h2 class="text-2xl text-center font-bold text-gray-800 mb-4">Rol de Juegos - 3X3</h2>
+                <table id="datatable2" class="excel-style text-sm w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-300">
+                            <th rowspan="2" class="border border-gray-400 p-2 text-center">No.</th>
+                            <th rowspan="2" class="border border-gray-400 p-2 text-center">HORA:</th>
+                            <th colspan="3" class="bg-yellow-400 border border-gray-400 p-2 text-center font-bold">MITAD 1</th>
+                            <th rowspan="2" class="bg-yellow-400 border-none w-4 p-0"></th> <th colspan="3" class="bg-yellow-400 border border-gray-400 p-2 text-center font-bold">MITAD 2</th>
+                            <th rowspan="2" class="border border-gray-400 p-2 text-center">LUGAR</th>
+                        </tr>
+                        <tr class="bg-gray-200">
+                            <th class="border border-gray-400 p-2 text-xs text-center">EQUIPO</th>
+                            <th class="border border-gray-400 p-2 text-xs text-center">VS</th>
+                            <th class="border border-gray-400 p-2 text-xs text-center">EQUIPO</th>
+                            <th class="border border-gray-400 p-2 text-xs text-center">EQUIPO</th>
+                            <th class="border border-gray-400 p-2 text-xs text-center">VS</th>
+                            <th class="border border-gray-400 p-2 text-xs text-center">EQUIPO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr class="border-b border-gray-300">
+                            <td class="p-2 border border-gray-300"></td>
+                            <td class="p-2 border border-gray-300 font-bold">5:00 p.m</td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK AZUL</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK BLANCO</td>
+                            <td class="bg-yellow-400 p-0 border-none"></td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK ROJO</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">CARDENALES</td>
+                            <td class="p-2 border border-gray-300 font-bold">DBK-2</td>
+                        </tr>
+                        <tr class="border-b border-gray-300 bg-slate-200">
+                            <td class="p-2 border border-gray-300"></td>
+                            <td class="p-2 border border-gray-300 font-bold">5:15 p.m</td>
+                            <td class="p-2 border border-gray-300 uppercase">MAXI</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">SAMOAS</td>
+                            <td class="bg-yellow-400 p-0 border-none"></td>
+                            <td class="p-2 border border-gray-300 uppercase">COBACH P.P</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">RG MOTOR</td>
+                            <td class="p-2 border border-gray-300 font-bold">DBK-2</td>
+                        </tr>
+                        <tr class="border-b border-gray-300">
+                            <td class="p-2 border border-gray-300"></td>
+                            <td class="p-2 border border-gray-300 font-bold">5:30 p.m</td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK AZUL</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">MAXI</td>
+                            <td class="bg-yellow-400 p-0 border-none"></td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK ROJO</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">COBACH P.P</td>
+                            <td class="p-2 border border-gray-300 font-bold">DBK-2</td>
+                        </tr>
+                        <tr class="border-b border-gray-300 bg-slate-200">
+                            <td class="p-2 border border-gray-300"></td>
+                            <td class="p-2 border border-gray-300 font-bold">5:45 p.m</td>
+                            <td class="p-2 border border-gray-300 uppercase">DBK BLANCO</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">SAMOAS</td>
+                            <td class="bg-yellow-400 p-0 border-none"></td>
+                            <td class="p-2 border border-gray-300 uppercase">RG MOTOR</td>
+                            <td class="p-2 border border-gray-300 font-light">vs</td>
+                            <td class="p-2 border border-gray-300 uppercase">CARDENALES</td>
+                            <td class="p-2 border border-gray-300 font-bold">DBK-2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mb-20" ></div>
+
+
             <div class="overflow-x-auto">
+                <h2 class="text-2xl text-center font-bold text-gray-800 mb-4">Rol de Juegos - Regular</h2>
                 <table id="datatable" class="table table-hover w-full border-collapse" style="width:100%">
                     <thead>
                         <tr>                                     
@@ -899,6 +976,30 @@
                     });
                 }
             });
+        });
+
+
+        $(document).ready(function() {
+            var table = $('#datatable2').DataTable({
+                "paging": false, // Generalmente estas tablas de rol son cortas
+                "info": false,
+                "searching": false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+                },
+                "columnDefs": [
+                    { "orderable": false, "targets": [0, 3, 5, 7, 9] }, // No ordenar en No, VS, separador y Lugar
+                    { "className": "dt-center", "targets": "_all" }
+                ],
+                "order": [[1, 'asc']] // Ordenar por Hora
+            });
+
+            // Función para numerar las filas automáticamente
+            table.on('order.dt search.dt', function () {
+                table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }).draw();
         });
     </script>
 </body>
