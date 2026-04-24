@@ -153,7 +153,7 @@
                 </h1>
             </div> 
             <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-dbkDark mb-2">ROL OFICIAL DE JUEGOS</h2>
-            <p class="text-dbkSecondary font-black text-xl mb-8 tracking-widest">RESULTADOS</p>
+            <p class="text-dbkSecondary font-black text-xl mb-8 tracking-widest">RESULTADOS EN TIEMPO REAL</p>
             <div class="w-24 h-1.5 bg-dbkRed mx-auto mb-12 rounded-full"></div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <a href="viernes.html" class="group relative overflow-hidden bg-dbkRed p-8 rounded-xl shadow-lg transition-all hover:-translate-y-2">
@@ -296,158 +296,18 @@
         <small class="font-bold">Copa DBK Cardenales 2026 <br>H. Caborca, Sonora, Mx.</small>
     </div>
 
-    <div id="chat-widget" class="fixed bottom-6 right-6 z-[60]">
-        <button id="open-chat" class="animate-pulse-custom bg-dbkRed text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform relative">
-            <i class="fa fa-comments text-2xl"></i>
-            <span class="absolute top-0 right-0 flex h-4 w-4">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-4 w-4 bg-white text-[10px] text-dbkRed font-bold items-center justify-center">1</span>
-            </span>
-        </button>
-
-        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden chat-appear">
-            <div class="bg-dbkDark text-white p-4 font-heading font-bold flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span>Asistente Copa DBK</span>
-                </div>
-                <button id="close-chat" class="text-white/50 hover:text-white text-2xl">&times;</button>
-            </div>
-            
-            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-4 text-sm bg-gray-50">
-                <div class="flex items-start gap-2">
-                    <img src="img/boski-avatar.png" class="w-8 h-8 rounded-full border border-gray-200 bg-white flex-shrink-0" alt="Boski">
-                    <div class="bg-white text-dbkDark p-3 rounded-lg shadow-sm border border-gray-100 mr-8">
-                        ¡Hola! Soy <strong>Boski</strong>. ¿En qué puedo ayudarte sobre la Copa DBK 2026?
-                    </div>
-                </div>
-            </div>
-
-            <div id="quick-actions" class="p-2 border-t bg-gray-50 flex flex-wrap gap-2 overflow-x-auto">
-                <button onclick="sendQuickAction('¿Qué hoteles hay disponibles?')" class="bg-white border border-dbkRed text-dbkRed text-[10px] px-2 py-1 rounded-full hover:bg-dbkRed hover:text-white transition-colors">🏨 Ver Hoteles</button>
-                <button onclick="sendQuickAction('¿Cuáles son las categorías?')" class="bg-white border border-dbkRed text-dbkRed text-[10px] px-2 py-1 rounded-full hover:bg-dbkRed hover:text-white transition-colors">🏀 Ver Categorías</button>
-                <button onclick="sendQuickAction('Muéstrame la convocatoria')" class="bg-white border border-dbkRed text-dbkRed text-[10px] px-2 py-1 rounded-full hover:bg-dbkRed hover:text-white transition-colors">📜 Ver Convocatoria</button>
-                <button onclick="sendQuickAction('¿Cómo puedo pagar la inscripción?')" class="bg-white border border-dbkRed text-dbkRed text-[10px] px-2 py-1 rounded-full hover:bg-dbkRed hover:text-white transition-colors">💳 Pagar Inscripción</button>
-            </div>
-
-            <div class="p-3 border-t bg-white flex gap-2">
-                <input type="text" id="user-input" placeholder="Pregunta algo..." class="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:border-dbkRed text-sm">
-                <button id="send-btn" class="bg-dbkRed text-white px-4 py-2 rounded-lg font-bold hover:bg-dbkSecondary transition-colors">
-                    <i class="fa fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>        
-        const chatBtn = document.getElementById('open-chat');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChat = document.getElementById('close-chat');
-        const sendBtn = document.getElementById('send-btn');
-        const userInput = document.getElementById('user-input');
-        const chatMessages = document.getElementById('chat-messages');
-
-        // Función para enviar acciones rápidas
-        function sendQuickAction(text) {
-            userInput.value = text;
-            sendMessage();
-        }
-
-        chatBtn.onclick = () => chatWindow.classList.toggle('hidden');
-        closeChat.onclick = () => chatWindow.classList.add('hidden');
-
-        function addMessage(text, isUser = false) {
-            const container = document.createElement('div');
-            container.className = isUser ? "flex justify-end mb-4" : "flex items-start gap-2 mb-4";
-
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser 
-                ? "bg-dbkDark text-white p-3 rounded-lg shadow-sm ml-8 text-right" 
-                : "bg-white text-dbkDark p-3 rounded-lg shadow-sm mr-8 border border-gray-100";
-
-            if (isUser) {
-                msgDiv.innerText = text;
-                container.appendChild(msgDiv);
-            } else {
-                // Imagen de Boski para sus respuestas
-                const avatar = document.createElement('img');
-                avatar.src = "img/boski-avatar.png";
-                avatar.className = "w-8 h-8 rounded-full border border-gray-200 bg-white flex-shrink-0";
-                
-                let formattedText = text.replace(/\n/g, '<br>');
-                formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                formattedText = formattedText.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: #f03232; text-decoration: underline; font-weight: bold;">$1</a>');
-                formattedText = formattedText.replace(/(\d{3}[\s-]?\d{3}[\s-]?\d{4})/g, (match) => {
-                    const cleanNumber = match.replace(/\D/g, '');
-                    return `<a href="https://api.whatsapp.com/send?phone=52${cleanNumber}" target="_blank" style="color: #25D366; text-decoration: underline; font-weight: bold;"><i class="fa fa-whatsapp"></i> ${match}</a>`;
-                });
-
-                msgDiv.innerHTML = formattedText;
-                container.appendChild(avatar);
-                container.appendChild(msgDiv);
-            }
-
-            chatMessages.appendChild(container);
-            chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
-        }
-
-        async function sendMessage() {
-            const message = userInput.value.trim();
-            if (!message) return;
-
-            addMessage(message, true); 
-            userInput.value = '';
-            
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = "text-gray-400 italic text-xs ml-10 mb-2";
-            loadingDiv.id = "temp-loading";
-            loadingDiv.innerText = "Boski está pensando...";
-            chatMessages.appendChild(loadingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            try {
-                const response = await fetch('chat.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message })
-                });
-                const data = await response.json();
-                
-                const currentLoading = document.getElementById('temp-loading');
-                if (currentLoading) currentLoading.remove();
-
-                if (data.choices && data.choices[0]) {
-                    addMessage(data.choices[0].message.content);
-                } else {
-                    addMessage("¡Uy! Algo salió mal con mi conexión. Intenta de nuevo.");
-                }
-            } catch (error) {
-                const currentLoading = document.getElementById('temp-loading');
-                if (currentLoading) currentLoading.remove();
-                addMessage("Lo siento, no pude conectar con el servidor.");
-            }
-        }
-
-        sendBtn.onclick = sendMessage;
-        userInput.onkeypress = (e) => { if (e.key === 'Enter') sendMessage(); };
-
-        // Observador de animaciones
+        // Mantener solo el observador para las animaciones de la página
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-        // Auto-apertura y cierre
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                chatWindow.classList.remove('hidden');
-                setTimeout(() => {
-                    if (userInput.value === "") chatWindow.classList.add('hidden');
-                }, 4000);
-            }, 1000);
-        });
     </script>
+
+    
+
+    
 </body>
 </html>
