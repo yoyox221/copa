@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNWK931CCL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HNWK931CCL');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <title>Copa DBK 2026 | Galería de fotos</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dbkRed: '#f03232',
+                        dbkDark: '#0f2a42',
+                        dbkGold: '#f8d67d',
+                        dbkLight: '#fff',
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
+        .hero-mini { background: linear-gradient(rgba(15, 42, 66, 0.8), rgba(15, 42, 66, 0.8)), url('../img/fondo3.png'); background-size: cover; background-position: center; }
+        /* Evita que las imágenes se corten entre columnas */
+        .gallery-item { break-inside: avoid; margin-bottom: 1rem; }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <nav class="fixed w-full z-50 glass-nav text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="../index.html" class="font-heading font-extrabold text-2xl tracking-tighter">DBK<span class="text-dbkGold">2026</span></a>
+            <a href="../index.html" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all text-sm font-bold uppercase tracking-widest">
+                <i class="fa fa-arrow-left mr-2"></i> Inicio
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 hero-mini bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="font-heading text-4xl md:text-6xl text-dbkLight font-extrabold tracking-tighter uppercase leading-none">
+                Momentos <span class="text-dbkGold">DBK</span>
+            </h1>
+            <p class="text-dbkGold mt-4 font-medium tracking-widest uppercase text-sm italic">Capturando la pasión del Basketball en Caborca</p>
+            <div class="w-20 h-1.5 bg-dbkRed mx-auto mt-6 rounded-full"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div id="gallery" class="columns-2 md:columns-3 lg:columns-4 gap-4">
+            </div>
+    </main>
+
+    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            <div class="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-dbkRed inline-block text-white">Ubicación e Información</h4>
+                <p class="text-white/70 text-base md:text-lg leading-relaxed">
+                    Ave. Quiroz y Mora No. 163 final sur, Col. Los Jardines<br>
+                    <span class="font-bold text-white">H. Caborca, Sonora.</span>
+                </p>
+                <a href="https://goo.gl/maps/ECgheE1u22S2" target="_blank" class="inline-flex items-center bg-dbkRed text-white px-6 py-3 rounded-xl font-black hover:bg-white hover:text-dbkDark transition-all shadow-2xl uppercase text-xs md:text-sm">
+                    <i class="fa fa-map-marker mr-3"></i> Ver mapa Google
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end justify-center space-y-6">
+                <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter text-dbkGold">Redes Sociales</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/domboscokino/" class="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed transition-all" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/dbk.mx/" class="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed transition-all" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+
+        const gallery = document.getElementById('gallery');
+        
+        // Generamos las 87 fotos
+        for (let i = 1; i <= 87; i++) {
+            const fileName = `dbk (${i}).jpg`;
+            const photoPath = `img/${fileName}`; // Asegúrate que esta sea la ruta correcta
+
+            const anchor = document.createElement('a');
+            anchor.href = photoPath;
+            // Definimos dimensiones verticales para el visor (proporción 2:3 aprox)
+            anchor.setAttribute('data-pswp-width', '1000'); 
+            anchor.setAttribute('data-pswp-height', '1500'); 
+            anchor.target = '_blank';
+            anchor.className = "gallery-item group relative block overflow-hidden rounded-xl bg-gray-200 shadow-md hover:shadow-xl transition-all duration-300";
+
+            anchor.innerHTML = `
+                <img src="${photoPath}" 
+                     alt="Copa DBK 2026 - Foto ${i}" 
+                     loading="lazy"
+                     class="w-full h-auto block transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i class="fa fa-search-plus text-white text-3xl"></i>
+                </div>
+            `;
+            gallery.appendChild(anchor);
+        }
+
+        // Inicializar Lightbox
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#gallery',
+            children: 'a',
+            pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
+        });
+        lightbox.init();
+    </script>
+</body>
+</html>
