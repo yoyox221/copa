@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNWK931CCL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -55,7 +54,6 @@
     
     <style>
         .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
-        /* Estilo para la tabla */
         #datatable_wrapper .dataTables_filter input {
             border: 2px solid #0f2a42;
             border-radius: 10px;
@@ -75,9 +73,11 @@
             letter-spacing: 0.1em;
             border: none;
         }
-
-        .glass-nav { background: rgba(181, 53, 45, 0.95); backdrop-filter: blur(10px); }
         .hero-mini { background: linear-gradient(rgba(15, 42, 66, 0.8), rgba(15, 42, 66, 0.8)), url('img/fondo3.png'); background-size: cover; background-position: center; }
+        #datatable th:nth-child(4), 
+            #datatable td:nth-child(4) {
+                text-align: right !important;
+            }
     </style>
 </head>
 
@@ -111,34 +111,635 @@
             <div class="mb-8 text-center md:text-left">
                 <h2 class="font-heading font-black text-2xl text-dbkDark uppercase tracking-tighter">Básquetbol</h2>
                 <p class="text-gray-400 text-sm italic">Usa el buscador para filtrar por equipo, lugar o categoría.</p>
-            </div>
+            </div>   
 
             <div class="overflow-x-auto">
+                <h2 class="text-2xl text-center font-bold text-gray-800 mb-4">Rol de Juegos - Regular</h2>
                 <table id="datatable" class="table table-hover w-full border-collapse" style="width:100%">
                     <thead>
-                        <tr>                                 
+                        <tr>                                     
                             <th class="p-4 rounded-tl-xl">No.</th>
                             <th class="p-4">Lugar</th>
                             <th class="p-4">Hora</th>
-                            <th class="p-4 text-dbkGold">Local</th>
+                            <th class="p-4 text-right">LOCAL</th>
                             <th class="p-4 text-center">VS</th>
-                            <th class="p-4 text-dbkGold">Visitante</th>
-                            <th class="p-4">Categoría</th>
-                            <th class="p-4 rounded-tr-xl">Grupo</th>
+                            <th class="p-4 ">VISITANTE</th>
+                            <th class="p-4">CATEGORÍA</th>
+                            <th class="p-4 rounded-tr-xl">GRUPO</th>
                         </tr>
                     </thead>
-                   <!--  <tbody class="text-sm font-medium text-gray-700">
-                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                            <td class="p-4">1</td>
-                            <td class="p-4 font-bold">GYM DBK</td>
-                            <td class="p-4 text-dbkRed">10:00 a.m</td>
-                            <td class="p-4 font-black uppercase">Cardenales</td>
-                            <td class="p-4 text-center opacity-30 italic font-light">vs</td>
-                            <td class="p-4 font-black uppercase">Cobach</td>
-                            <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">Cad Var</span></td>
-                            <td class="p-4">U</td>
-                        </tr>
-                    </tbody> -->
+                    <tbody class="text-sm font-medium text-gray-700">
+
+                     <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">DBK A</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">GANTE</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">LINCES</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">NEWLAND</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">GANTE</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">TIBURONES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1100">11:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1A</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2B</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1200">12:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">1</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">4</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">JUV VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">SXB</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">TIBURONES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">SXB</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">COBACH</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">GSF1</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">GSF2</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">JUV VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">GYM</td>
+                        <td class="p-4 text-dbkRed" data-order="1600">4:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>     
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">SXB</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">TITANES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">DBK</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">BERRENDOS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">LABRADORES</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">COBACH</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1100">11:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1B</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2A</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1200">12:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">2</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">JUV VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">MUÑOZ</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">GANTE</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">TIBURONES</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FUMINS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS FEM</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DUELA</td>
+                        <td class="p-4 text-dbkRed" data-order="1600">4:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">IAC</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">CAPITANES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO VAR</span></td>
+                        <td class="p-4">B</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">LABRADORES</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">CAPITANES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF VAR</span></td>
+                        <td class="p-4">B</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">DBK</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FUMINS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1100">11:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">4</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1200">12:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">SXB</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">VENADOS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">RAZITOS</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">NEWLAND</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">LABRADORES</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">GANTE</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">CAD VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">JUV VAR</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1600">4:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">DBK</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">CAPITANES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB VAR</span></td>
+                        <td class="p-4">A</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1B</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2A</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1A</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2B</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1100">11:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">2</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1200">12:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">DBK B</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">TITANES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">BERRENDOS</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">LINCES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB FEM</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1A</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2B</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1B</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2A</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1B</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2A</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>                    
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1200">12:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO FEM</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">FINAL</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">FINAL</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF VAR</span></td>
+                        <td class="p-4">FINAL</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-1</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS FEM</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+
+
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">4</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">2</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB FEM</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1000">10:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">1A</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">2B</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO VAR</span></td>
+                        <td class="p-4">SEMI</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO VAR</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB FEM</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">DBK-2</td>
+                        <td class="p-4 text-dbkRed" data-order="1500">3:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">BIB VAR</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">EXT-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">SXB</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">SOLECITOS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PREESCOLAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">EXT-2</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">BERRENDOS</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">IAC</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PREESCOLAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-EXTERIOR</td>
+                        <td class="p-4 text-dbkRed" data-order="0800">8:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">MUÑOZ</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">TIBURONES</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">PAS VAR</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-EXTERIOR</td>
+                        <td class="p-4 text-dbkRed" data-order="0900">9:00 a.m</td>
+                        <td class="p-4 font-black uppercase text-right">RAZITOS</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">VENADOS</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF FEM</span></td>
+                        <td class="p-4">U</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-EXTERIOR</td>
+                        <td class="p-4 text-dbkRed" data-order="1300">1:00 p.m</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">MICRO FEM</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+                    <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                        <td class="p-4"></td>
+                        <td class="p-4 font-bold">CANCHA-EXTERIOR</td>
+                        <td class="p-4 text-dbkRed" data-order="1400">2:00 p.m.</td>
+                        <td class="p-4 font-black uppercase text-right">3ER LUGAR</td>
+                        <td class="p-4 text-center font-light">VS</td>
+                        <td class="p-4 font-black uppercase">3ER LUGAR</td>
+                        <td class="p-4"><span class="bg-gray-100 px-2 py-1 rounded text-[10px] font-bold uppercase">INF VAR</span></td>
+                        <td class="p-4">3ER LUGAR</td>
+                    </tr>
+
+
+
+
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -150,49 +751,32 @@
         </div>
     </main>
 
-    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10 reveal">
+    <footer class="bg-dbkDark text-white py-16 px-6 border-t border-white/10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            
             <div class="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
                 <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter border-b-4 border-dbkRed inline-block text-white">Ubicación e Información</h4>
-                
                 <p class="text-white/70 text-base md:text-lg leading-relaxed">
                     Ave. Quiroz y Mora No. 163 final sur, Col. Los Jardines<br>
                     <span class="font-bold text-white">H. Caborca, Sonora.</span><br>
                     <span class="mt-4 block">Email: <a href="mailto:contacto@dbk.mx" class="text-dbkGold font-bold hover:text-white transition-colors">contacto@dbk.mx</a></span>
                 </p>
-                
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-2">
-                    <a href="canchas/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-map mr-2"></i> Canchas
-                    </a>
+                    <a href="canchas/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm"><i class="fa fa-map mr-2"></i> Canchas</a>
                     <span class="text-white/20 hidden sm:inline">|</span>
-                    <a href="hospedaje/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-bed mr-2"></i> Hospedaje
-                    </a>
+                    <a href="hospedaje/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm"><i class="fa fa-bed mr-2"></i> Hospedaje</a>
                     <span class="text-white/20 hidden sm:inline">|</span>
-                    <a href="food-zone/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm">
-                        <i class="fa fa-cutlery mr-2"></i> Alimentos
-                    </a>
+                    <a href="food-zone/index.html" class="text-dbkGold hover:text-white font-bold flex items-center transition-colors text-sm"><i class="fa fa-cutlery mr-2"></i> Alimentos</a>
                 </div>
-
                 <a href="https://goo.gl/maps/ECgheE1u22S2" target="_blank" class="inline-flex items-center bg-dbkRed text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-black hover:bg-white hover:text-dbkDark transition-all shadow-2xl hover:-translate-y-1 tracking-widest uppercase text-xs md:text-sm">
                     <i class="fa fa-map-marker mr-3"></i> Ver mapa Google
                 </a>
             </div>
-
             <div class="flex flex-col items-center md:items-end justify-center space-y-6 md:space-y-8">
                 <h4 class="font-heading font-black text-2xl md:text-3xl tracking-tighter text-dbkGold">Redes Sociales</h4>
                 <div class="flex gap-4 md:gap-6">
-                    <a href="https://www.facebook.com/domboscokino/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/dbk.mx/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=526371059826" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank">
-                        <i class="fa fa-whatsapp"></i>
-                    </a>
+                    <a href="https://www.facebook.com/domboscokino/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/dbk.mx/" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=526371059826" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:bg-dbkRed hover:text-white transition-all text-xl md:text-2xl shadow-lg hover:-translate-y-2" target="_blank"><i class="fa fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -210,10 +794,11 @@
         $(document).ready(function () {
             var t = $('#datatable').DataTable({
                 responsive: true,
-                order: [[2, 'asc']], 
+                order: [[2, 'asc']], // Ordena por la columna Hora (índice 2)
                 paging: true,
                 searching: true,
-                pageLength: 50,
+                pageLength: 100,
+                dom: '<"flex justify-end mb-4"f>rt<"bottom"ip>',
                 language: {
                     search: "🔍 ",
                     searchPlaceholder: "Buscar equipo o categoría...",
@@ -229,6 +814,7 @@
                 }
             });
         });
+
     </script>
 </body>
 </html>
